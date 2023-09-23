@@ -1,0 +1,32 @@
+{
+	"name": "Rats",
+	"plugin-id": "Sprite",
+	"sid": 606336913640935,
+	"instanceVariables": [
+		{
+			"name": "BulletCooldown",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 336388936141666
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 375645432463771
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Rat_D",
+		"Rat_L",
+		"Rat_NE",
+		"Rat_NW",
+		"Rat_R",
+		"Rat_SE",
+		"Rat_SW",
+		"Rat_U"
+	]
+}

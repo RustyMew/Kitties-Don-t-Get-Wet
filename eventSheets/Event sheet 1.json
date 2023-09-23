@@ -1,0 +1,894 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "CurrentScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 868191728391478
+		},
+		{
+			"eventType": "variable",
+			"name": "Speed",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 146218437035666
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 451413938768634
+				}
+			],
+			"actions": [
+				{
+					"id": "acquire-target",
+					"objectClass": "Rats",
+					"sid": 593393041179297,
+					"behaviorType": "Turret",
+					"parameters": {
+						"target": "Cat"
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 917776212322980,
+					"parameters": {
+						"object": "Cat",
+						"time-scale": "Speed"
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 573525438758338,
+					"parameters": {
+						"object": "Rats",
+						"time-scale": "Speed"
+					}
+				},
+				{
+					"id": "set-object-time-scale",
+					"objectClass": "System",
+					"sid": 603332434076024,
+					"parameters": {
+						"object": "Water",
+						"time-scale": "Speed"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 482508447781501,
+					"parameters": {
+						"variable": "CurrentScore",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 525157180795037,
+					"parameters": {
+						"text": "CurrentScore"
+					}
+				}
+			],
+			"sid": 650873676771664
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 735860311184274
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 897206743740726,
+					"parameters": {
+						"variable": "Speed",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 315162735826892,
+					"parameters": {
+						"variable": "CurrentScore",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_D",
+					"sid": 804572252613338,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_D",
+					"sid": 463344838432236,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_D.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_D\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_L",
+					"sid": 645187148033650,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_L",
+					"sid": 972064925772291,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_L.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_L\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_NE",
+					"sid": 828485862646586,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_NE",
+					"sid": 824678723335510,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_NE.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_NE\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_NW",
+					"sid": 785402857553032,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_NW",
+					"sid": 176041831289749,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_NW.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_NW\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_R",
+					"sid": 925158723376521,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_R",
+					"sid": 648510251547189,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_R.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_R\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_SE",
+					"sid": 217488617214277,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_SE",
+					"sid": 402279662374681,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_SE.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_SE\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_SW",
+					"sid": 936800255111957,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_SW",
+					"sid": 582173818290858,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_SW.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_SW\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_U",
+					"sid": 374716102460642,
+					"parameters": {
+						"instance-variable": "BulletCooldown",
+						"value": "random(2.0, 3.5)"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Rat_U",
+					"sid": 591406045024878,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "Rat_U.BulletCooldown",
+						"type": "once",
+						"tag": "\"Rat_U\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "FasterText",
+					"sid": 575358536184884,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "30.0",
+						"type": "once",
+						"tag": "\"SpeedUp\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Water",
+					"sid": 136476282799814
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 842934945540851,
+					"parameters": {
+						"variable": "CurrentScore",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 871134586184257
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "FasterText",
+					"sid": 139865002756039,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"SpeedUp\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 444830842730156,
+					"parameters": {
+						"variable": "Speed",
+						"value": "0.5"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "FasterText",
+					"sid": 249551768667170,
+					"parameters": {
+						"text": "\"Faster!\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 837041184536685,
+					"parameters": {
+						"seconds": "2.0"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "FasterText",
+					"sid": 319153147275887,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "FasterText",
+					"sid": 159217573341208,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "30.0",
+						"type": "once",
+						"tag": "\"SpeedUp\""
+					}
+				}
+			],
+			"sid": 727268396037350
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cat",
+					"sid": 941339812044553,
+					"parameters": {
+						"object": "Water"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 819773472639094
+				}
+			],
+			"sid": 945505446127294
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Rat Fire",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_D",
+							"sid": 447366117429626,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_D\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_D",
+							"sid": 117692199291019,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_D",
+							"sid": 331907553251691,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_D",
+							"sid": 810016431750771,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_D.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_D\""
+							}
+						}
+					],
+					"sid": 356229388597225
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_L",
+							"sid": 631617792999625,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_L\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_L",
+							"sid": 787164480403291,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_L",
+							"sid": 506100400114486,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_L",
+							"sid": 636936407711039,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_L.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_L\""
+							}
+						}
+					],
+					"sid": 571966576546946
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_NE",
+							"sid": 656449231702553,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_NE\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_NE",
+							"sid": 225782399642941,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_NE",
+							"sid": 278167489791203,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_NE",
+							"sid": 694308803433729,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_NE.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_NE\""
+							}
+						}
+					],
+					"sid": 581767467741517
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_NW",
+							"sid": 133555416098005,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_NW\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_NW",
+							"sid": 123446916683657,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_NW",
+							"sid": 788805857394922,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_NW",
+							"sid": 169944567610038,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_NW.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_NW\""
+							}
+						}
+					],
+					"sid": 804860524545475
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_R",
+							"sid": 985693844424243,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_R\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_R",
+							"sid": 665022717575386,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_R",
+							"sid": 821446630057423,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_R",
+							"sid": 415728018719245,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_R.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_R\""
+							}
+						}
+					],
+					"sid": 647520620524786
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_SE",
+							"sid": 922108858225874,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_SE\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_SE",
+							"sid": 176967781981017,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_SE",
+							"sid": 995558086569054,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_SE",
+							"sid": 237235295606845,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_SE.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_SE\""
+							}
+						}
+					],
+					"sid": 636499993819687
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_SW",
+							"sid": 840528020543661,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_SW\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_SW",
+							"sid": 352130055966212,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_SW",
+							"sid": 946318279980934,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_SW",
+							"sid": 666098679948324,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_SW.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_SW\""
+							}
+						}
+					],
+					"sid": 185652966877799
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Rat_U",
+							"sid": 425357815716307,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Rat_U\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Rat_U",
+							"sid": 866442227089574,
+							"parameters": {
+								"object": "Water",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Rat_U",
+							"sid": 396411670183302,
+							"parameters": {
+								"instance-variable": "BulletCooldown",
+								"value": "random(2.0, 3.5)"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Rat_U",
+							"sid": 364844537004263,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "Rat_U.BulletCooldown",
+								"type": "once",
+								"tag": "\"Rat_U\""
+							}
+						}
+					],
+					"sid": 544919886670817
+				}
+			],
+			"sid": 561984322162453
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Extra Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 942087448007619,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Cat",
+							"sid": 321853520178924,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 183991780510398
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 714404778258291,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Cat",
+							"sid": 314536995985956,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 242211519504241
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 943311138448515,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Cat",
+							"sid": 721981785000050,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 358626850675030
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 858818151579607,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Cat",
+							"sid": 396358238014067,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 205465816257088
+				}
+			],
+			"sid": 913655133245340
+		}
+	],
+	"sid": 923876865531478
+}

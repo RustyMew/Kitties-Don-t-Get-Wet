@@ -1,0 +1,15 @@
+{
+	"name": "FasterText",
+	"plugin-id": "Text",
+	"sid": 101606203978922,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 616352285258226
+		}
+	],
+	"effectTypes": []
+}
