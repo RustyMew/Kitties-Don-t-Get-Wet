@@ -1,0 +1,28 @@
+{
+	"name": "MenuCode",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 571074512063725
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Cat",
+					"sid": 208250785516772,
+					"parameters": {
+						"animation": "\"Wet\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 425520512471874
+		}
+	],
+	"sid": 723549466617066
+}

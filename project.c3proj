@@ -8,6 +8,27 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "BinaryData",
+			"name": "Binary Data",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -103,7 +124,19 @@
 			"Rat_SW",
 			"Rat_SE",
 			"FasterText",
-			"ScoreText"
+			"ScoreText",
+			"ReadyText",
+			"AuthenticationJSON",
+			"LeaderboardJSON",
+			"ResponseJSON",
+			"SubmitScoreJSON",
+			"SessionJSON",
+			"AuthenticationBinaryData",
+			"LeaderboardBinaryData",
+			"ScoreBinaryData",
+			"AJAX",
+			"LeaderboardText",
+			"HighScoreText"
 		],
 		"subfolders": []
 	},
@@ -117,13 +150,17 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Game",
+			"Menu",
+			"Leaderboards"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"GameCode",
+			"MenuCode",
+			"LeaderboardManager"
 		],
 		"subfolders": []
 	},

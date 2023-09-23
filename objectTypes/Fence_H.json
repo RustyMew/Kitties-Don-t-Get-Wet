@@ -4,7 +4,13 @@
 	"sid": 691237009310133,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 405399238171291
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -18,7 +24,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6483929,
+						"imageSpriteId": 9408559,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

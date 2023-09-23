@@ -1,5 +1,5 @@
 {
-	"name": "Event sheet 1",
+	"name": "GameCode",
 	"events": [
 		{
 			"eventType": "variable",
@@ -20,6 +20,26 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 146218437035666
+		},
+		{
+			"eventType": "variable",
+			"name": "Difficulty",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 736300979769211
+		},
+		{
+			"eventType": "variable",
+			"name": "GameOver",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 812018168730609
 		},
 		{
 			"eventType": "block",
@@ -68,24 +88,97 @@
 					}
 				},
 				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 482508447781501,
-					"parameters": {
-						"variable": "CurrentScore",
-						"value": "1"
-					}
-				},
-				{
 					"id": "set-text",
 					"objectClass": "ScoreText",
-					"sid": 525157180795037,
+					"sid": 953674797944596,
 					"parameters": {
 						"text": "CurrentScore"
 					}
 				}
 			],
-			"sid": 650873676771664
+			"sid": 650873676771664,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "You can also add sub events to primary code blocks by right clicking on a block and selecting \"add sub event\" from the secondary drop down menu brought up by highlighting \"Add\", I've left another sub event unfinished below because I want to see if you can fill it out. More information is below."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 391531690315109,
+							"parameters": {
+								"variable": "Speed",
+								"comparison": 0,
+								"value": "0"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 519745500334871,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 508326008254218,
+							"parameters": {
+								"variable": "CurrentScore",
+								"value": "20"
+							}
+						}
+					],
+					"sid": 880562523126948
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 511130319947180,
+							"parameters": {
+								"variable": "Speed",
+								"comparison": 0,
+								"value": "0"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 969032296839735,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 720237895358418,
+							"parameters": {
+								"variable": "CurrentScore",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 882255685528378
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -97,6 +190,48 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "LeaderboardText",
+					"sid": 611165907371798,
+					"parameters": {
+						"instance-variable": "Score",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 413527847925858,
+					"parameters": {
+						"variable": "Speed",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ReadyText",
+					"sid": 305938673691167,
+					"parameters": {
+						"text": "\"Ready?\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 993385893061785,
+					"parameters": {
+						"seconds": "2.0"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ReadyText",
+					"sid": 522024912173125,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
@@ -301,7 +436,30 @@
 					}
 				}
 			],
-			"sid": 871134586184257
+			"sid": 871134586184257,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "The default value of difficulty (0) represents a hard difficulty. This value (1) represents a normal difficulty, which will remove the four diagonal facing rats (Rat_NE, Rat_NW, Rat_SE, & Rat_SW). I've already set up the trigger for this sub event, so you'll just need to set up the actions. (Hint: You'll need an individual action for each diagonal facing rat, trying to execute an action from the Rats family will have the action apply to all 8 rats)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 587419420418362,
+							"parameters": {
+								"variable": "Difficulty",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 130012483597860
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -378,9 +536,47 @@
 			],
 			"actions": [
 				{
-					"id": "restart-layout",
+					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 819773472639094
+					"sid": 682786907161630,
+					"parameters": {
+						"variable": "GameOver",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Cat",
+					"sid": 714602789698355,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "FasterText",
+					"sid": 671337712334862,
+					"parameters": {
+						"text": "\"SPLASH!\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Water",
+					"sid": 500597489132434,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 223736638596952,
+					"parameters": {
+						"variable": "Speed",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 945505446127294
@@ -888,6 +1084,337 @@
 				}
 			],
 			"sid": 913655133245340
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cat Animation",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Cat",
+							"sid": 159533942196025,
+							"behaviorType": "8Direction"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Cat",
+							"sid": 615784573554207,
+							"parameters": {
+								"animation": "\"Move\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 961621097076855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Cat",
+							"sid": 573119057876931,
+							"behaviorType": "8Direction",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Cat",
+							"sid": 319957242476738,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 200185821435508
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-enabled",
+							"objectClass": "Cat",
+							"sid": 181168271837369,
+							"behaviorType": "8Direction",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Cat",
+							"sid": 640596722538009,
+							"parameters": {
+								"animation": "\"Wet\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 426823713087127
+				}
+			],
+			"sid": 993671185121122
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LeaderboardManagement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 409731058465925
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 868592463548705,
+							"parameters": {
+								"key": "\"player_identifier\""
+							}
+						}
+					],
+					"sid": 742767575216765
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 727379679476094,
+							"parameters": {
+								"key": "\"player_identifier\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-response-binary",
+							"objectClass": "AJAX",
+							"sid": 618982104845353,
+							"parameters": {
+								"destination": "AuthenticationBinaryData"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "AuthenticationJSON",
+							"sid": 357543070700557,
+							"parameters": {
+								"path": "\"game_key\"",
+								"value": "\"dev_2367540ab3f4434298528e5a0bdeecf6\""
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "AuthenticationJSON",
+							"sid": 612041062332707,
+							"parameters": {
+								"path": "\"game_version\"",
+								"value": "\"0.0.0.1\""
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "AuthenticationJSON",
+							"sid": 270163602674340,
+							"parameters": {
+								"path": "\"development_mode\"",
+								"value": "\"true\""
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "AuthenticationJSON",
+							"sid": 172726033054355,
+							"parameters": {
+								"path": "\"player_identifier\"",
+								"value": "LocalStorage.ItemValue"
+							}
+						},
+						{
+							"id": "set-request-header",
+							"objectClass": "AJAX",
+							"sid": 138609130840122,
+							"parameters": {
+								"header": "\"Content-Type\"",
+								"value": "\"application/json\""
+							}
+						},
+						{
+							"id": "post-to-url",
+							"objectClass": "AJAX",
+							"sid": 987413579894749,
+							"parameters": {
+								"tag": "\"authentication\"",
+								"url": "\"https://api.lootlocker.io/game/v2/session/guest\"",
+								"data": "AuthenticationJSON.ToCompactString",
+								"method": "\"POST\""
+							}
+						}
+					],
+					"sid": 562265514227262
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 880335970133054,
+							"parameters": {
+								"tag": "\"authentication\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-json",
+							"objectClass": "AuthenticationJSON",
+							"sid": 477596143665832,
+							"parameters": {
+								"path": "\"response\"",
+								"json": "AuthenticationBinaryData.GetText(0, AuthenticationBinaryData.ByteLength)"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 506875435157131,
+							"parameters": {
+								"key": "\"player_identifier\"",
+								"value": "AuthenticationJSON.Get(\"response.player_identifier\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "SessionJSON",
+							"sid": 489388072845236,
+							"parameters": {
+								"path": "\"session_token\"",
+								"value": "AuthenticationJSON.Get(\"response.session_token\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "SessionJSON",
+							"sid": 397214958864407,
+							"parameters": {
+								"path": "\"player_id\"",
+								"value": "AuthenticationJSON.Get(\"response.player_id\")"
+							}
+						}
+					],
+					"sid": 697088479504674
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 850985121992877,
+							"parameters": {
+								"variable": "GameOver"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 293487364247473,
+							"parameters": {
+								"variable": "GameOver",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-response-binary",
+							"objectClass": "AJAX",
+							"sid": 943192206594739,
+							"parameters": {
+								"destination": "ScoreBinaryData"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "SubmitScoreJSON",
+							"sid": 564100158206267,
+							"parameters": {
+								"path": "\"score\"",
+								"value": "CurrentScore"
+							}
+						},
+						{
+							"id": "set-request-header",
+							"objectClass": "AJAX",
+							"sid": 654624065426684,
+							"parameters": {
+								"header": "\"Content-Type\"",
+								"value": "\"application/json\""
+							}
+						},
+						{
+							"id": "set-request-header",
+							"objectClass": "AJAX",
+							"sid": 570992891901133,
+							"parameters": {
+								"header": "\"x-session-token\"",
+								"value": "SessionJSON.Get(\"session_token\")"
+							}
+						},
+						{
+							"id": "post-to-url",
+							"objectClass": "AJAX",
+							"sid": 515001571801269,
+							"parameters": {
+								"tag": "\"submitScore\"",
+								"url": "\"https://api.lootlocker.io/game/leaderboards/HardKey/submit\"",
+								"data": "SubmitScoreJSON.ToCompactString",
+								"method": "\"POST\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 522048731457124,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 224318863147087,
+							"parameters": {
+								"layout": "Leaderboards"
+							}
+						}
+					],
+					"sid": 786768485091503
+				}
+			],
+			"sid": 758083222372669
 		}
 	],
 	"sid": 923876865531478

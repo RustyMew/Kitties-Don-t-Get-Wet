@@ -1,0 +1,17 @@
+{
+	"name": "LeaderboardText",
+	"plugin-id": "Text",
+	"sid": 145812298416765,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Score",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 503225544751623
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

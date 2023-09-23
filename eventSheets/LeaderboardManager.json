@@ -1,0 +1,154 @@
+{
+	"name": "LeaderboardManager",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 835672280814259
+				}
+			],
+			"actions": [
+				{
+					"id": "set-response-binary",
+					"objectClass": "AJAX",
+					"sid": 117362267969352,
+					"parameters": {
+						"destination": "LeaderboardBinaryData"
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 910592115574260,
+					"parameters": {
+						"header": "\"Content-Type\"",
+						"value": "\"application/json\""
+					}
+				},
+				{
+					"id": "set-request-header",
+					"objectClass": "AJAX",
+					"sid": 815158852026606,
+					"parameters": {
+						"header": "\"x-session-token\"",
+						"value": "SessionJSON.Get(\"session_token\")"
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 741176965054039,
+					"parameters": {
+						"tag": "\"getLeaderboard\"",
+						"url": "\"https://api.lootlocker.io/game/leaderboards/HardKey/list?count=5\"",
+						"data": "\"\"",
+						"method": "\"GET\""
+					}
+				}
+			],
+			"sid": 182356289147140
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 857644492798920,
+					"parameters": {
+						"tag": "\"getLeaderboard\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "LeaderboardJSON",
+					"sid": 356001684228542,
+					"parameters": {
+						"data": "LeaderboardBinaryData.GetText(0, LeaderboardBinaryData.ByteLength)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "LeaderboardText",
+					"sid": 432131288918154,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 841615538360115,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "LeaderboardJSON",
+							"sid": 282312014259162,
+							"parameters": {
+								"path": "\"items\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "LeaderboardText",
+							"sid": 602245728597534,
+							"parameters": {
+								"text": "LeaderboardJSON.Get(\".rank\")"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "LeaderboardText",
+							"sid": 922354716944030,
+							"parameters": {
+								"text": "\".\""
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "LeaderboardText",
+							"sid": 140319658513896,
+							"parameters": {
+								"text": "LeaderboardJSON.Get(\".player.id\")"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "LeaderboardText",
+							"sid": 836615989177885,
+							"parameters": {
+								"text": "\"-\""
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "LeaderboardText",
+							"sid": 236618601142560,
+							"parameters": {
+								"text": "LeaderboardJSON.Get(\".score\")"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "LeaderboardText",
+							"sid": 877223029223070,
+							"parameters": {
+								"text": "newline"
+							}
+						}
+					],
+					"sid": 258588008914887
+				}
+			]
+		}
+	],
+	"sid": 640899615860305
+}
