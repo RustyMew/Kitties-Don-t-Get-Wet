@@ -22,6 +22,223 @@
 				}
 			],
 			"sid": 425520512471874
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "StartButton1",
+					"sid": 681165900540443
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 786395059647142,
+					"parameters": {
+						"variable": "Difficulty",
+						"value": "1"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 227553752969581,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 438772306196965
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "StartButton2",
+					"sid": 655286459184279
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 824470091851098,
+					"parameters": {
+						"variable": "Difficulty",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 144858846906041,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 822252491088564
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "HiScoreButton",
+					"sid": 507505704797650
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 973302503877230,
+					"parameters": {
+						"layout": "Leaderboards"
+					}
+				}
+			],
+			"sid": 594030470771753
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "How2PlayButton",
+					"sid": 884420964197165
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "H2PBackground",
+					"sid": 529716554684592,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Tutorial",
+					"sid": 898353476784316,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartButton1",
+					"sid": 873426557961041,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartButton2",
+					"sid": 272255465037642,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "How2PlayButton",
+					"sid": 691701633162886,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HiScoreButton",
+					"sid": 552995860438835,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 521510651613679
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 816821207069519,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "H2PBackground",
+					"sid": 266994117589735
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Tutorial",
+					"sid": 931266499735502
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "H2PBackground",
+					"sid": 419989590389395,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Tutorial",
+					"sid": 960802618271576,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartButton1",
+					"sid": 687839117998566,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartButton2",
+					"sid": 514531290240569,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "How2PlayButton",
+					"sid": 646732039052863,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HiScoreButton",
+					"sid": 956886772203862,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 606990049201118
 		}
 	],
 	"sid": 723549466617066

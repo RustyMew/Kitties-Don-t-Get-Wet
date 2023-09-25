@@ -15,8 +15,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "BinaryData",
 			"name": "Binary Data",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -136,7 +150,17 @@
 			"ScoreBinaryData",
 			"AJAX",
 			"LeaderboardText",
-			"HighScoreText"
+			"HighScoreText",
+			"LeaderboardHead",
+			"BackButton",
+			"Title",
+			"StartButton1",
+			"StartButton2",
+			"How2PlayButton",
+			"HiScoreButton",
+			"H2PBackground",
+			"Tutorial",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -170,7 +194,72 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "sfx_splash_hit-002.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 546994041949554,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_splash_hit-003.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 749836988525890,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_water_shot-001.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 156433761606606,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_water_shot-002.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 769262433560982,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_water_shot-003.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 667989651337113,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_water_shot-004.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 688535226339564,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_ready.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 902402345110203,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sfx_splash_hit-001.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 373267783030652,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
@@ -182,7 +271,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "EightBit Atari-Block.ttf",
+					"type": "application/font-sfnt",
+					"sid": 234895225748347,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -308,7 +406,7 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
@@ -318,5 +416,5 @@
 	},
 	"viewportWidth": 640,
 	"viewportHeight": 480,
-	"firstLayout": null
+	"firstLayout": "Menu"
 }

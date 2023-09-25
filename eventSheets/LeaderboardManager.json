@@ -49,7 +49,8 @@
 					}
 				}
 			],
-			"sid": 182356289147140
+			"sid": 182356289147140,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -148,6 +149,27 @@
 					"sid": 258588008914887
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "BackButton",
+					"sid": 232856223491781
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 606406016486582,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 752692878452037
 		}
 	],
 	"sid": 640899615860305

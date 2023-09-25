@@ -92,7 +92,8 @@
 					},
 					"uid": 7,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -140,7 +141,8 @@
 					},
 					"uid": 8,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -188,7 +190,8 @@
 					},
 					"uid": 9,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -236,7 +239,8 @@
 					},
 					"uid": 10,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -284,7 +288,8 @@
 					},
 					"uid": 15,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -332,7 +337,8 @@
 					},
 					"uid": 16,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -380,7 +386,8 @@
 					},
 					"uid": 17,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -428,7 +435,8 @@
 					},
 					"uid": 18,
 					"instanceVariables": {
-						"BulletCooldown": 0
+						"BulletCooldown": 0,
+						"ShotSound": 0
 					},
 					"behaviors": {
 						"Turret": {
@@ -648,7 +656,7 @@
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "EightBit Atari-Block",
 						"size": 12,
 						"line-height": 0,
 						"bold": false,
@@ -696,7 +704,7 @@
 					"properties": {
 						"text": "Text",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "EightBit Atari-Block",
 						"size": 12,
 						"line-height": 0,
 						"bold": false,
@@ -784,7 +792,7 @@
 					"properties": {
 						"text": "Ready?",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "EightBit Atari-Block",
 						"size": 24,
 						"line-height": 0,
 						"bold": false,
@@ -807,9 +815,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 240,
+						"x": 224,
 						"y": 208,
-						"width": 176,
+						"width": 192,
 						"height": 48,
 						"originX": 0,
 						"originY": 0,

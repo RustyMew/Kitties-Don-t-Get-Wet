@@ -42,6 +42,16 @@
 			"sid": 812018168730609
 		},
 		{
+			"eventType": "variable",
+			"name": "HitSound",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 132044445648698
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -131,10 +141,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 508326008254218,
+							"sid": 722128481701766,
 							"parameters": {
 								"variable": "CurrentScore",
-								"value": "20"
+								"value": "100"
 							}
 						}
 					],
@@ -169,10 +179,10 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 720237895358418,
+							"sid": 487740154015888,
 							"parameters": {
 								"variable": "CurrentScore",
-								"value": "10"
+								"value": "50"
 							}
 						}
 					],
@@ -206,6 +216,15 @@
 					"parameters": {
 						"variable": "Speed",
 						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 364487085124377,
+					"parameters": {
+						"variable": "HitSound",
+						"value": "choose(0, 1, 2)"
 					}
 				},
 				{
@@ -272,6 +291,15 @@
 				},
 				{
 					"id": "set-instvar-value",
+					"objectClass": "Rat_D",
+					"sid": 329406995185112,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
 					"objectClass": "Rat_L",
 					"sid": 645187148033650,
 					"parameters": {
@@ -288,6 +316,15 @@
 						"duration": "Rat_L.BulletCooldown",
 						"type": "once",
 						"tag": "\"Rat_L\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_L",
+					"sid": 772293629759483,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
 					}
 				},
 				{
@@ -312,6 +349,15 @@
 				},
 				{
 					"id": "set-instvar-value",
+					"objectClass": "Rat_NE",
+					"sid": 221536414385044,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
 					"objectClass": "Rat_NW",
 					"sid": 785402857553032,
 					"parameters": {
@@ -328,6 +374,15 @@
 						"duration": "Rat_NW.BulletCooldown",
 						"type": "once",
 						"tag": "\"Rat_NW\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_NW",
+					"sid": 654535177375587,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
 					}
 				},
 				{
@@ -352,6 +407,15 @@
 				},
 				{
 					"id": "set-instvar-value",
+					"objectClass": "Rat_R",
+					"sid": 956083766387753,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
 					"objectClass": "Rat_SE",
 					"sid": 217488617214277,
 					"parameters": {
@@ -368,6 +432,15 @@
 						"duration": "Rat_SE.BulletCooldown",
 						"type": "once",
 						"tag": "\"Rat_SE\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_SE",
+					"sid": 679366824183659,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
 					}
 				},
 				{
@@ -392,6 +465,15 @@
 				},
 				{
 					"id": "set-instvar-value",
+					"objectClass": "Rat_SW",
+					"sid": 537914029031399,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
 					"objectClass": "Rat_U",
 					"sid": 374716102460642,
 					"parameters": {
@@ -411,6 +493,15 @@
 					}
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Rat_U",
+					"sid": 270077667204089,
+					"parameters": {
+						"instance-variable": "ShotSound",
+						"value": "choose(0, 1 ,2 ,3)"
+					}
+				},
+				{
 					"id": "start-timer",
 					"objectClass": "FasterText",
 					"sid": 575358536184884,
@@ -427,12 +518,15 @@
 					"sid": 136476282799814
 				},
 				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 842934945540851,
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 471529073834130,
 					"parameters": {
-						"variable": "CurrentScore",
-						"value": "10"
+						"audio-file": "sfx_ready",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Start\""
 					}
 				}
 			],
@@ -456,7 +550,28 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Rat_NE",
+							"sid": 135226305522953
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Rat_NW",
+							"sid": 521743974333935
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Rat_SE",
+							"sid": 344365073804682
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Rat_SW",
+							"sid": 199519114013146
+						}
+					],
 					"sid": 130012483597860
 				}
 			]
@@ -579,7 +694,99 @@
 					}
 				}
 			],
-			"sid": 945505446127294
+			"sid": 945505446127294,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 880788304625558,
+							"parameters": {
+								"variable": "HitSound",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 621774585901911,
+							"parameters": {
+								"audio-file": "sfx_splash_hit-001",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Hit1\""
+							}
+						}
+					],
+					"sid": 583936372878432
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 257102147180298,
+							"parameters": {
+								"variable": "HitSound",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 748928198902155,
+							"parameters": {
+								"audio-file": "sfx_splash_hit-002",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Hit2\""
+							}
+						}
+					],
+					"sid": 856474292110480
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 897297090900109,
+							"parameters": {
+								"variable": "HitSound",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 171916440839852,
+							"parameters": {
+								"audio-file": "sfx_splash_hit-003",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Hit3\""
+							}
+						}
+					],
+					"sid": 987832865030500
+				}
+			]
 		},
 		{
 			"eventType": "group",
@@ -634,7 +841,165 @@
 							}
 						}
 					],
-					"sid": 356229388597225
+					"sid": 356229388597225,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_D",
+									"sid": 776417179447701,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 338253116590270,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_D",
+									"sid": 841906063529041,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 621364144508132
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_D",
+									"sid": 282508325329576,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 227003413660904,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_D",
+									"sid": 351400295940548,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 978517777691446
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_D",
+									"sid": 426867092676774,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 754364045380625,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_D",
+									"sid": 776049553360844,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 172540253090377
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_D",
+									"sid": 708752757524418,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 397692054775058,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_D",
+									"sid": 924944359102247,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 788803711977006
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -682,7 +1047,165 @@
 							}
 						}
 					],
-					"sid": 571966576546946
+					"sid": 571966576546946,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_L",
+									"sid": 755928617041232,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 860294961963355,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_L",
+									"sid": 103255930345927,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 953548305334379
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_L",
+									"sid": 595962258482951,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 195270447834300,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_L",
+									"sid": 932117783216812,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 474100014217053
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_L",
+									"sid": 160420929291359,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 292176460227708,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_L",
+									"sid": 142115618552518,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 445281828116497
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_L",
+									"sid": 260041744293579,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 568702323085500,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_L",
+									"sid": 835013195320962,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 164911978033605
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -730,7 +1253,165 @@
 							}
 						}
 					],
-					"sid": 581767467741517
+					"sid": 581767467741517,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NE",
+									"sid": 532232090083829,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 421841784468518,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NE",
+									"sid": 853554850618010,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 534209817231843
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NE",
+									"sid": 199923782877526,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 263154275941916,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NE",
+									"sid": 561666555596608,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 855125690516583
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NE",
+									"sid": 512159234454570,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 699582840403068,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NE",
+									"sid": 859391294413907,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 509065711372936
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NE",
+									"sid": 913415379467120,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 500679975348297,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NE",
+									"sid": 610781862554406,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 194213624984669
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -778,7 +1459,165 @@
 							}
 						}
 					],
-					"sid": 804860524545475
+					"sid": 804860524545475,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NW",
+									"sid": 260416847336030,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 720659778181666,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NW",
+									"sid": 375933445203359,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 813841938524768
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NW",
+									"sid": 700853426367325,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 522054404167716,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NW",
+									"sid": 183941579046552,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 173799197036586
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NW",
+									"sid": 287524641617947,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 146681471085237,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NW",
+									"sid": 940250489154845,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 905019843190814
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_NW",
+									"sid": 415546827353132,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 320771763102678,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_NW",
+									"sid": 743626070765632,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 226754696360508
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -826,7 +1665,165 @@
 							}
 						}
 					],
-					"sid": 647520620524786
+					"sid": 647520620524786,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_R",
+									"sid": 182737705403148,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 476565356610788,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_R",
+									"sid": 609336514665742,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 376938337594485
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_R",
+									"sid": 187221883785827,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 654706882812288,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_R",
+									"sid": 631410453590603,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 295882926236672
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_R",
+									"sid": 360649371582435,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 151042599533336,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_R",
+									"sid": 380942127892039,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 938970444597688
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_R",
+									"sid": 542281627461785,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 504317917959812,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_R",
+									"sid": 717550057313341,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 678291115061464
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -874,7 +1871,165 @@
 							}
 						}
 					],
-					"sid": 636499993819687
+					"sid": 636499993819687,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SE",
+									"sid": 251422997528906,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 556816143168599,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SE",
+									"sid": 894351214261181,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 114636215538545
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SE",
+									"sid": 161067109622647,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 358769850539751,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SE",
+									"sid": 250596339661049,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 274335062853376
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SE",
+									"sid": 922156498588747,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 402763634844404,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SE",
+									"sid": 719727696725073,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 591536106912006
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SE",
+									"sid": 258992348053427,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 451942374438560,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SE",
+									"sid": 294732729932246,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 829836602767259
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -922,7 +2077,165 @@
 							}
 						}
 					],
-					"sid": 185652966877799
+					"sid": 185652966877799,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SW",
+									"sid": 384076562622396,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 550991508085807,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SW",
+									"sid": 924752227793524,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 421077791473852
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SW",
+									"sid": 354117865268162,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 824783357711568,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SW",
+									"sid": 998127529531826,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 342448077340406
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SW",
+									"sid": 529408866996821,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 356158798998385,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SW",
+									"sid": 654312250687395,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 931734742621172
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_SW",
+									"sid": 150171132786062,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 994487196733691,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_SW",
+									"sid": 848984236565121,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 962569312479669
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -970,7 +2283,165 @@
 							}
 						}
 					],
-					"sid": 544919886670817
+					"sid": 544919886670817,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_U",
+									"sid": 814061819818170,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 302629974133905,
+									"parameters": {
+										"audio-file": "sfx_water_shot-001",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_U",
+									"sid": 856757623030345,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 734979710820380
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_U",
+									"sid": 695170280463096,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 927416509460750,
+									"parameters": {
+										"audio-file": "sfx_splash_hit-002",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_U",
+									"sid": 511797826335620,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 358673614924991
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_U",
+									"sid": 186131804704861,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 198784288606882,
+									"parameters": {
+										"audio-file": "sfx_water_shot-003",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_U",
+									"sid": 308434813165952,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 730921043126871
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Rat_U",
+									"sid": 966661845608196,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 437545949704375,
+									"parameters": {
+										"audio-file": "sfx_water_shot-004",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rat_U",
+									"sid": 478405466312016,
+									"parameters": {
+										"instance-variable": "ShotSound",
+										"value": "choose(0, 1, 2, 3)"
+									}
+								}
+							],
+							"sid": 419187138421883
+						}
+					]
 				}
 			],
 			"sid": 561984322162453

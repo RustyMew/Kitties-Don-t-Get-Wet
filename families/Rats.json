@@ -9,6 +9,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 336388936141666
+		},
+		{
+			"name": "ShotSound",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 752160258788664
 		}
 	],
 	"behaviorTypes": [
